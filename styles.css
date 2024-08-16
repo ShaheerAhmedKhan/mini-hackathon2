@@ -1,4 +1,3 @@
-/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,43 +6,70 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
+    align-items: center;
+    height: 100vh;
     padding: 20px;
 }
 
-.dashboard-container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+/* Background for Login Page */
+body.index {
+    background-image: url('https://www.fuelrefuel.com/wp-content/uploads/2017/06/8812963-green-tea-leaves.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.add-blog-form {
-    background: #ffffff;
+/* Background for Signup Page */
+body.signup-page {
+    background-image: url('https://unsplash.com/photos/coffee-or-tea-on-green-leaves-pattern-on-white-background-flat-lay-1LTvJgh1MW8');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Background for Dashboard Page */
+body.background { 
+        /* background-image: url('https://imgcdn.stablediffusionweb.com/2024/8/16/bc1776d6-d4b2-4253-a38a-7a8e6ca58ad1.jpg')!important; */
+        background-size: cover;
+        background-position: center; 
+         background-repeat:no-repeat
+      }
+      
+
+.Login,
+.signup,
+.dashboard {
+    background: rgba(255, 255, 255, 0.9); /* Makes the container slightly transparent */
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.add-blog-form h2 {
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
     margin-bottom: 20px;
     font-size: 24px;
     color: #333;
 }
 
-.add-blog-form label {
+label {
     display: block;
     margin: 10px 0 5px;
     color: #555;
     font-weight: 500;
 }
 
-.add-blog-form input,
-.add-blog-form textarea {
+input {
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
@@ -54,13 +80,12 @@ body {
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.add-blog-form input:focus,
-.add-blog-form textarea:focus {
+input:focus {
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
 }
 
-.add-blog-form button {
+button {
     width: 100%;
     padding: 12px;
     background-color: #007bff;
@@ -72,46 +97,39 @@ body {
     transition: background-color 0.3s, transform 0.3s;
 }
 
-.add-blog-form button:hover {
+button:hover {
     background-color: #0056b3;
     transform: translateY(-2px);
 }
 
-.blog-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.blog-card {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    width: calc(50% - 20px);
-    box-sizing: border-box;
-}
-
-.blog-card h3 {
-    margin-bottom: 10px;
-    font-size: 20px;
-    color: #333;
-}
-
-.blog-card p {
-    margin-bottom: 10px;
+p {
+    margin-top: 15px;
     font-size: 14px;
     color: #555;
 }
 
-.blog-card span {
-    font-size: 12px;
-    color: #888;
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
 }
 
 /* Responsive Design */
 @media (max-width: 600px) {
-    .blog-card {
-        width: 100%;
+    .container {
+        padding: 20px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    input,
+    button {
+        font-size: 14px;
     }
 }
